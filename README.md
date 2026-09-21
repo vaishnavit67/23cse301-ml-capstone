@@ -130,12 +130,12 @@ The preprocessing pipeline included:
 | 2 | SVR | 0.9255 | 48.58 | 29.83 |
 | 3 | Decision Tree | 0.8760 | 62.67 | 37.60 |
 | 4 | Gradient Boosting | 0.8682 | 64.61 | 45.86 |
-| 5 | Polynomial Regression | 0.6992 | — | — |
-| 6 | Lasso Regression | 0.6817 | — | — |
-| 7 | ElasticNet Regression | 0.6816 | — | — |
-| 8 | Ridge Regression | 0.6816 | — | — |
-| 9 | Linear Regression | 0.6814 | — | — |
-| 10 | KNN Regression | 0.5676 | — | — |
+| 5 | Polynomial Regression | 0.6992 | 97.594 | 72.414 |
+| 6 | Lasso Regression | 0.6817 | 100.396 | 74.058 |
+| 7 | ElasticNet Regression | 0.6816 | 100.4138 | 74.0587 |
+| 8 | Ridge Regression | 0.6816 | 100.4176 | 74.0871 |
+| 9 | Linear Regression | 0.6814 | 100.4387 | 74.0996 |
+| 10 | KNN Regression | 0.5676 | 117.0197 | 86.1087 |
 
 ### Hyperparameter Tuning
 
