@@ -17,7 +17,7 @@ The project follows the complete machine learning workflow:
 
 | Track | Status | Problem |
 |---|---|---|
-| Regression | Part A and B completed | Bike Sharing Demand Prediction |
+| Regression | Completed | Bike Sharing Demand Prediction |
 | Classification | Part A Completed | Hotel Booking Cancellation Prediction |
 | Clustering | Planned | To be added |
 
@@ -63,6 +63,45 @@ The preprocessing pipeline included:
 - Numerical feature scaling where required
 - Stratified 80:20 train-test split
 - Training-only fitting of preprocessing transformations
+
+
+### Regression Results
+
+| Rank | Model | R² | RMSE | MAE |
+|------|-------|----:|-----:|----:|
+| 1 | Random Forest | 0.9303 | 46.996 | 29.47 |
+| 2 | SVR | 0.9255 | 48.58 | 29.83 |
+| 3 | Decision Tree | 0.8760 | 62.67 | 37.60 |
+| 4 | Gradient Boosting | 0.8682 | 64.61 | 45.86 |
+| 5 | Polynomial Regression | 0.6992 | 97.594 | 72.414 |
+| 6 | Lasso Regression | 0.6817 | 100.396 | 74.058 |
+| 7 | ElasticNet Regression | 0.6816 | 100.4138 | 74.0587 |
+| 8 | Ridge Regression | 0.6816 | 100.4176 | 74.0871 |
+| 9 | Linear Regression | 0.6814 | 100.4387 | 74.0996 |
+| 10 | KNN Regression | 0.5676 | 117.0197 | 86.1087 |
+
+### Hyperparameter Tuning
+
+Hyperparameter tuning was performed using cross-validation.
+
+The following search techniques were used:
+
+- GridSearchCV
+- RandomizedSearchCV
+
+The hyperparameters investigated included:
+
+- Random Forest: `n_estimators`
+- SVR: `C`, `kernel`
+- Decision Tree: `max_depth`
+- Gradient Boosting: `learning_rate`
+- KNN: `n_neighbors`
+
+### Regression Analysis
+
+The evaluated models showed different levels of performance on the Bike Sharing dataset. Tree-based and nonlinear models captured relationships in the data more effectively than the linear models evaluated in this experiment.
+
+Random Forest achieved the highest test-set R² among the evaluated models, with an R² of approximately 0.93 on the common test split. Its performance was also supported by its cross-validation results.
 
 ---
 
@@ -122,43 +161,6 @@ The preprocessing pipeline included:
 - `arrival_month_sin`
 - `arrival_month_cos`
 
-### Regression Results
-
-| Rank | Model | R² | RMSE | MAE |
-|------|-------|----:|-----:|----:|
-| 1 | Random Forest | 0.9303 | 46.996 | 29.47 |
-| 2 | SVR | 0.9255 | 48.58 | 29.83 |
-| 3 | Decision Tree | 0.8760 | 62.67 | 37.60 |
-| 4 | Gradient Boosting | 0.8682 | 64.61 | 45.86 |
-| 5 | Polynomial Regression | 0.6992 | 97.594 | 72.414 |
-| 6 | Lasso Regression | 0.6817 | 100.396 | 74.058 |
-| 7 | ElasticNet Regression | 0.6816 | 100.4138 | 74.0587 |
-| 8 | Ridge Regression | 0.6816 | 100.4176 | 74.0871 |
-| 9 | Linear Regression | 0.6814 | 100.4387 | 74.0996 |
-| 10 | KNN Regression | 0.5676 | 117.0197 | 86.1087 |
-
-### Hyperparameter Tuning
-
-Hyperparameter tuning was performed using cross-validation.
-
-The following search techniques were used:
-
-- GridSearchCV
-- RandomizedSearchCV
-
-The hyperparameters investigated included:
-
-- Random Forest: `n_estimators`
-- SVR: `C`, `kernel`
-- Decision Tree: `max_depth`
-- Gradient Boosting: `learning_rate`
-- KNN: `n_neighbors`
-
-### Regression Analysis
-
-The evaluated models showed different levels of performance on the Bike Sharing dataset. Tree-based and nonlinear models captured relationships in the data more effectively than the linear models evaluated in this experiment.
-
-Random Forest achieved the highest test-set R² among the evaluated models, with an R² of approximately 0.93 on the common test split. Its performance was also supported by its cross-validation results.
 ---
 
 ## Classification — Part A
@@ -234,7 +236,7 @@ pip install -r requirements.txt
 
 | Component | Status |
 |---|---|
-| Regression Track | To be completed |
+| Regression Track | Completed |
 | Classification Part A | Completed |
 | Classification Part B | To be completed |
 | Clustering Track | Planned |
