@@ -17,7 +17,7 @@ The project follows the complete machine learning workflow:
 
 | Track | Status | Problem |
 |---|---|---|
-| Regression | To be completed | To be added |
+| Regression | Part A and B completed | Bike Sharing Demand Prediction |
 | Classification | Part A Completed | Hotel Booking Cancellation Prediction |
 | Clustering | Planned | To be added |
 
@@ -25,7 +25,44 @@ The project follows the complete machine learning workflow:
 
 ## 1. Regression Track
 
-**To be added**
+## 
+### Problem Statement
+
+The objective of this regression task is to predict the **total number of bike rentals (`cnt`) per hour** based on temporal, seasonal, weather, and environmental factors.
+
+### Dataset
+
+- **Dataset:** UCI Bike Sharing Dataset — Hourly
+- **Target:** `cnt`
+- **Prediction Type:** Continuous numerical prediction
+- **Task:** Predict hourly bike rental demand
+
+### Exploratory Data Analysis
+
+The dataset was examined through:
+
+- Dataset shape and data types
+- Missing-value analysis
+- Duplicate detection
+- Target-class distribution
+- Numerical feature distributions
+- Categorical feature distributions
+- Correlation heatmap
+- Feature-target scatter plots
+- Boxplots and outlier analysis
+
+### Data Preprocessing
+
+The preprocessing pipeline included:
+
+- Missing-value checking
+- Duplicate checking
+- IQR-based outlier treatment
+- Feature engineering
+- Categorical feature encoding
+- Numerical feature scaling where required
+- Stratified 80:20 train-test split
+- Training-only fitting of preprocessing transformations
 
 ---
 
@@ -85,6 +122,43 @@ The preprocessing pipeline included:
 - `arrival_month_sin`
 - `arrival_month_cos`
 
+### Regression Results
+
+| Rank | Model | R² | RMSE | MAE |
+|------|-------|----:|-----:|----:|
+| 1 | Random Forest | 0.9303 | 46.996 | 29.47 |
+| 2 | SVR | 0.9255 | 48.58 | 29.83 |
+| 3 | Decision Tree | 0.8760 | 62.67 | 37.60 |
+| 4 | Gradient Boosting | 0.8682 | 64.61 | 45.86 |
+| 5 | Polynomial Regression | 0.6992 | — | — |
+| 6 | Lasso Regression | 0.6817 | — | — |
+| 7 | ElasticNet Regression | 0.6816 | — | — |
+| 8 | Ridge Regression | 0.6816 | — | — |
+| 9 | Linear Regression | 0.6814 | — | — |
+| 10 | KNN Regression | 0.5676 | — | — |
+
+### Hyperparameter Tuning
+
+Hyperparameter tuning was performed using cross-validation.
+
+The following search techniques were used:
+
+- GridSearchCV
+- RandomizedSearchCV
+
+The hyperparameters investigated included:
+
+- Random Forest: `n_estimators`
+- SVR: `C`, `kernel`
+- Decision Tree: `max_depth`
+- Gradient Boosting: `learning_rate`
+- KNN: `n_neighbors`
+
+### Regression Analysis
+
+The evaluated models showed different levels of performance on the Bike Sharing dataset. Tree-based and nonlinear models captured relationships in the data more effectively than the linear models evaluated in this experiment.
+
+Random Forest achieved the highest test-set R² among the evaluated models, with an R² of approximately 0.93 on the common test split. Its performance was also supported by its cross-validation results.
 ---
 
 ## Classification — Part A
