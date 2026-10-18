@@ -25,7 +25,6 @@ The project follows the complete machine learning workflow:
 
 ## 1. Regression Track
 
-## 
 ### Problem Statement
 
 The objective of this regression task is to predict the **total number of bike rentals (`cnt`) per hour** based on temporal, seasonal, weather, and environmental factors.
