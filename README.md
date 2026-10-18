@@ -1,3 +1,4 @@
+
 # Machine Learning Capstone Project
 
 ## 23CSE301 — Machine Learning
@@ -13,12 +14,12 @@ The project follows the complete machine learning workflow:
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 | Track | Status | Problem |
 |---|---|---|
 | Regression | Completed | Bike Sharing Demand Prediction |
-| Classification | Part A Completed | Hotel Booking Cancellation Prediction |
+| Classification | Completed | Hotel Booking Cancellation Prediction |
 | Clustering | Planned | To be added |
 
 ---
@@ -43,7 +44,7 @@ The dataset was examined through:
 - Dataset shape and data types
 - Missing-value analysis
 - Duplicate detection
-- Target-class distribution
+- Target distribution
 - Numerical feature distributions
 - Categorical feature distributions
 - Correlation heatmap
@@ -60,14 +61,13 @@ The preprocessing pipeline included:
 - Feature engineering
 - Categorical feature encoding
 - Numerical feature scaling where required
-- Stratified 80:20 train-test split
+- Train-test splitting
 - Training-only fitting of preprocessing transformations
-
 
 ### Regression Results
 
 | Rank | Model | R² | RMSE | MAE |
-|------|-------|----:|-----:|----:|
+|---|---|---:|---:|---:|
 | 1 | Random Forest | 0.9303 | 46.996 | 29.47 |
 | 2 | SVR | 0.9255 | 48.58 | 29.83 |
 | 3 | Decision Tree | 0.8760 | 62.67 | 37.60 |
@@ -100,7 +100,7 @@ The hyperparameters investigated included:
 
 The evaluated models showed different levels of performance on the Bike Sharing dataset. Tree-based and nonlinear models captured relationships in the data more effectively than the linear models evaluated in this experiment.
 
-Random Forest achieved the highest test-set R² among the evaluated models, with an R² of approximately 0.93 on the common test split. Its performance was also supported by its cross-validation results.
+Random Forest achieved the highest test-set R² among the evaluated models, with an R² of approximately 0.93 on the common test split.
 
 ---
 
@@ -110,9 +110,7 @@ Random Forest achieved the highest test-set R² among the evaluated models, with
 
 ### Problem Statement
 
-The objective of this classification task is to predict whether a
-hotel booking will be **Cancelled** or **Not_Canceled** based on
-booking-related information.
+The objective of this classification task is to predict whether a hotel booking will be **`Canceled` or `Not_Canceled`** based on booking-related information.
 
 ### Dataset
 
@@ -143,7 +141,6 @@ The preprocessing pipeline included:
 
 - Missing-value checking
 - Duplicate checking
-- IQR-based outlier treatment
 - Feature engineering
 - Categorical feature encoding
 - Numerical feature scaling where required
@@ -182,14 +179,96 @@ Five classification algorithms were implemented:
 | Decision Tree | 88.04% | 82.17% | 81.07% | 88.01% | 91.54% |
 | SVC | 86.38% | 81.53% | 75.56% | 86.24% | 92.43% |
 
-> **Note:** These results represent Classification **Part A**.
-> Classification Part B will be added during the next stage.
+---
+
+## Classification — Part B
+
+Five additional classification algorithms were implemented using the same dataset and train-test split.
+
+### Algorithms Implemented
+
+1. Random Forest Classifier
+2. AdaBoost Classifier
+3. Gradient Boosting Classifier
+4. Bagging Classifier
+5. Multi-Layer Perceptron (MLP) Classifier
+
+### Model Training and Evaluation
+
+Each algorithm was trained and evaluated using the same classification task. The workflow included:
+
+- Baseline model training
+- Prediction on the test set
+- Confusion matrix analysis
+- Accuracy, precision, recall, and weighted F1-score calculation
+- ROC-AUC evaluation
+- Hyperparameter tuning
+- Evaluation of tuned models
+- Comparison of baseline and tuned performance
+
+### Part B Results
+
+| Model | Baseline Accuracy | Tuned Accuracy | Baseline Weighted F1 | Tuned Weighted F1 | Tuned ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Random Forest | 90.17% | 90.05% | 0.9005 | 0.9000 | 0.9575 |
+| AdaBoost | 81.67% | 81.92% | 0.8111 | 0.8149 | 0.8775 |
+| Gradient Boosting | 86.08% | 86.60% | 0.8582 | 0.8638 | 0.9277 |
+| Bagging | 90.02% | 90.24% | 0.8995 | 0.9016 | 0.9555 |
+| MLP | 87.20% | 86.81% | 0.8704 | 0.8673 | 0.9340 |
+
+### Hyperparameter Tuning
+
+Hyperparameter tuning was performed to find suitable model configurations.
+
+The parameters investigated included:
+
+- **Random Forest:** `n_estimators`, `max_depth`, `min_samples_leaf`
+- **AdaBoost:** `n_estimators`, `learning_rate`
+- **Gradient Boosting:** `n_estimators`, `learning_rate`, `max_depth`
+- **Bagging:** `n_estimators`, `max_samples`, `max_features`
+- **MLP:** `hidden_layer_sizes`, `alpha`, `learning_rate_init`
+
+### Classification Analysis
+
+The results show that the ensemble-based models performed well on the hotel booking cancellation dataset.
+
+- **Bagging** achieved the highest tuned accuracy of 90.24% and weighted F1-score of 0.9016 among the models in the comparison.
+- **Random Forest** achieved the highest tuned ROC-AUC of 0.9575.
+- **Gradient Boosting** improved its accuracy and weighted F1-score after tuning.
+- **AdaBoost** showed a small improvement after tuning.
+- **MLP** showed a slight decrease in performance after tuning.
+
+Bagging is a strong choice when prioritizing accuracy and weighted F1-score, while Random Forest is a strong choice when prioritizing ROC-AUC. The final model should also be assessed using cancellation recall, since identifying canceled bookings is an important part of the prediction task.
+
+### Overall Classification Comparison
+
+All ten classification algorithms from Part A and Part B are compared using:
+
+- Accuracy
+- Precision
+- Recall
+- Weighted F1-score
+- ROC-AUC
+
+This comparison supports the selection of an appropriate model for predicting hotel booking cancellations.
 
 ---
 
 ## 3. Clustering Track
 
 To be completed.
+
+Planned work includes:
+
+- K-Means clustering
+- Hierarchical clustering
+- Silhouette Score evaluation
+- Davies-Bouldin Index evaluation
+- Calinski-Harabasz Score evaluation
+- Elbow curve for K-Means
+- Dendrogram for hierarchical clustering
+- PCA-based two-dimensional cluster visualization
+- t-SNE visualization for at least one clustering algorithm
 
 ---
 
@@ -205,11 +284,17 @@ Project/
 │   └── INNHotelsGroup.csv
 │
 ├── Notebooks/
-│   └── Classification.ipynb
+|   ├──Regression.ipynb
+│   ├── Classification.ipynb
+│   └── Clustering.ipynb
 │
 └── anaconda_projects/
-  └── db/
+    └── db/
 ```
+
+*Update the notebook names and folder structure to match the actual files in the repository.*
+
+---
 
 ## 5. Technologies Used
 
@@ -231,35 +316,33 @@ Clone the repository and install the required dependencies:
 pip install -r requirements.txt
 ```
 
+Open the relevant Jupyter Notebook and run the cells sequentially.
+
+---
+
 ## 7. Project Status
 
 | Component | Status |
 |---|---|
 | Regression Track | Completed |
 | Classification Part A | Completed |
-| Classification Part B | To be completed |
+| Classification Part B | Completed |
 | Clustering Track | Planned |
+
+---
 
 ## 8. Academic Integrity & AI Assistance
 
-Generative AI tools were used as a supporting resource during the
-development of this project, primarily for code scaffolding,
-debugging assistance, and understanding implementation approaches.
+Generative AI tools were used as a supporting resource during the development of this project, primarily for code scaffolding, debugging assistance, and understanding implementation approaches.
 
-However, the data analysis, exploratory observations, feature
-engineering decisions, model evaluation, interpretation of results,
-and conclusions were carried out and validated by our team.
+The team reviewed the code and outputs and validated the model evaluations and interpretations as part of the project workflow. The final analytical decisions and conclusions were reviewed by the team.
 
-We did not rely on AI-generated interpretations without verification.
-We examined the data, evaluated the models using the required metrics,
-interpreted the visualizations and results, and made the final
-analytical decisions independently.
+AI was used as a development aid to support implementation and learning.
 
-AI was therefore used as a development aid, while the analytical
-reasoning, interpretation, and conclusions represent our team's work
-and understanding.
+---
 
 ## Done By
+
 ### Team Members
 
 | S.No. | Name | Register Number |
