@@ -1,10 +1,9 @@
-For Regression:
-
-
-For Classification (PART A):
-numpy==2.3.2
-pandas==2.3.2
-matplotlib==3.10.6
-seaborn==0.13.2
-scikit-learn==1.7.1
-jupyter==1.1.1
+streamlit>=1.35.0
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.4.0
+scipy>=1.11.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.18.0
+joblib>=1.3.0
