@@ -3,7 +3,9 @@ import os
 
 sys.path.insert(0, ".")
 sys.path.insert(0, "src")
-sys.path.insert(0, "pages")
+sys.path.insert(0, ".")
+sys.path.insert(0, "src")
+sys.path.insert(0, "views")
 
 print("--- TESTING MODULE IMPORTS ---")
 import preprocessing
@@ -17,7 +19,6 @@ import classification
 import clustering
 import model_comparison
 import datasets_methodology
-import about
 print("All modules imported successfully!")
 
 print("\n--- TESTING REGRESSION PREDICTIONS (ALL 10 ALGORITHMS) ---")

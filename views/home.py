@@ -152,21 +152,11 @@ def render_home_page():
     df_inv = pd.DataFrame(inventory_data)
     st.dataframe(df_inv, use_container_width=True, hide_index=True)
 
-    # Course & Team metadata footer
+    # Course & Capstone metadata footer
     st.markdown("---")
-    c1, c2 = st.columns(2)
-    with c1:
-        st.markdown("""
-        **Academic Details:**
-        - **Course:** 23CSE301 — Machine Learning
-        - **Institution:** Amrita Vishwa Vidyapeetham
-        - **Department:** Computer Science and Engineering
-        - **Academic Year:** 2026–27
-        """)
-    with c2:
-        st.markdown("""
-        **Team 17 Members:**
-        - **Himakesh Puthumbaku** (CB.SC.U4CSE24741)
-        - **Vaishnavi Tallada** (CB.SC.U4CSE24757)
-        - **Vuyyala Manesh** (CB.SC.U4CSE24759)
-        """)
+    st.markdown("""
+    <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; font-size: 0.9rem;">
+        <b style="color: #0072B2;">23CSE301 — Machine Learning Capstone</b> | 
+        <span>Amrita Vishwa Vidyapeetham • Department of Computer Science and Engineering</span>
+    </div>
+    """, unsafe_allow_html=True)

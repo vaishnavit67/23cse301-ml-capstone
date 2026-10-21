@@ -4,8 +4,8 @@ import os
 # Add root directory and src to sys.path so modules resolve cleanly in local and cloud deployment
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.join(CURRENT_DIR, "src")
-PAGES_DIR = os.path.join(CURRENT_DIR, "pages")
-for p in [CURRENT_DIR, SRC_DIR, PAGES_DIR]:
+VIEWS_DIR = os.path.join(CURRENT_DIR, "views")
+for p in [CURRENT_DIR, SRC_DIR, VIEWS_DIR]:
     if p not in sys.path:
         sys.path.insert(0, p)
 
@@ -74,7 +74,6 @@ from classification import render_classification_page
 from clustering import render_clustering_page
 from model_comparison import render_comparison_page
 from datasets_methodology import render_methodology_page
-from about import render_about_page
 
 # Navigation State Handling
 if "nav_selection" not in st.session_state:
@@ -104,10 +103,6 @@ PAGES = {
     "Methodology": {
         "title": "📖 Datasets & Methodology",
         "render": render_methodology_page
-    },
-    "About": {
-        "title": "ℹ️ About & Team",
-        "render": render_about_page
     }
 }
 
@@ -118,7 +113,7 @@ with st.sidebar:
         <h2 style="margin: 0; color: #0072B2; font-weight: 800;">23CSE301</h2>
         <span style="font-size: 0.85rem; color: #666; font-weight: 600; text-transform: uppercase;">ML Capstone Dashboard</span><br>
         <span style="background-color: #e6f4ea; color: #137333; font-size: 0.75rem; font-weight: bold; padding: 2px 8px; border-radius: 10px; border: 1px solid #ceead6; display: inline-block; margin-top: 5px;">
-            ● Review 2 Verified (+2 Bonus)
+            ● 22 Models Verified
         </span>
     </div>
     """, unsafe_allow_html=True)
@@ -147,10 +142,7 @@ with st.sidebar:
         <b style="color: #333;">Master Model Count: 22</b><br>
         <span style="color: #666;">• Regression: 10 Models</span><br>
         <span style="color: #666;">• Classification: 10 Models</span><br>
-        <span style="color: #666;">• Clustering: 2 Models</span><br>
-        <hr style="margin: 8px 0;">
-        <span style="color: #555;"><b>Team 17:</b> Amrita CSE</span><br>
-        <span style="font-size: 0.8rem; color: #888;">Himakesh • Vaishnavi • Manesh</span>
+        <span style="color: #666;">• Clustering: 2 Models</span>
     </div>
     """, unsafe_allow_html=True)
     

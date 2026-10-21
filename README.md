@@ -32,7 +32,6 @@ The interactive web dashboard brings all three tracks together into a cohesive i
 4. **🎵 Clustering Workspace:** Continuous audio sliders classifying songs into discovered acoustic archetypes and projecting them onto interactive 2D PCA & t-SNE manifold plots.
 5. **📊 Model Comparison Hub:** Sortable comparative metric tables and interactive bar charts across all algorithms.
 6. **📖 Datasets & Methodology:** In-depth documentation of feature engineering, leakage prevention protocols, and mathematical principles.
-7. **ℹ️ About & Rubric Alignment:** Team information, review scopes, and bonus marks rubric compliance (+2 Marks).
 
 ---
 
@@ -145,14 +144,13 @@ Uncover latent acoustic music archetypes from 9 continuous physical audio featur
 ├── requirements.txt                # Production environment dependencies
 ├── README.md                       # Master capstone documentation
 │
-├── pages/                          # Streamlit modular page controllers
+├── views/                          # Streamlit modular page controllers
 │   ├── home.py                     # Home dashboard & algorithm inventory
 │   ├── regression.py               # Regression workspace (10 algorithms)
 │   ├── classification.py           # Classification workspace (10 algorithms)
 │   ├── clustering.py               # Clustering workspace (Hierarchical & K-Means)
 │   ├── model_comparison.py         # Multi-track comparison hub & charts
-│   ├── datasets_methodology.py     # Feature engineering & leakage protocols
-│   └── about.py                    # Course info, team details, rubric alignment
+│   └── datasets_methodology.py     # Feature engineering & leakage protocols
 │
 ├── src/                            # Machine learning core pipeline services
 │   ├── data_loader.py              # Cached dataset loading utilities
@@ -181,17 +179,7 @@ Uncover latent acoustic music archetypes from 9 continuous physical audio featur
 
 ---
 
-## 👥 Team Members
-
-| S.No. | Name | Register Number | Role / Primary Ownership |
-| :---: | :--- | :--- | :--- |
-| 1 | **Himakesh Puthumbaku** | CB.SC.U4CSE24741 | Full Pipeline Integration, Web Application & Deployment, Clustering Track |
-| 2 | **Vaishnavi Tallada** | CB.SC.U4CSE24757 | Classification Track (Part A & Part B), EDA & Outlier Strategy |
-| 3 | **Vuyyala Manesh** | CB.SC.U4CSE24759 | Regression Track (10 Models, Hyperparameter Tuning & Cross-Val) |
-
----
-
 ## 📜 Academic Integrity Citation
 
 In accordance with Section 8 of the 23CSE301 Capstone Guidelines:
-Generative AI tools were utilized as an assistive technology for code scaffolding, debugging, and UI structuring. All feature engineering, exploratory data analysis, algorithm choices, hyperparameter tuning experiments, metric evaluations, and analytical conclusions represent the team's verified work.
+Generative AI tools were utilized as an assistive technology for code scaffolding, debugging, and UI structuring. All feature engineering, exploratory data analysis, algorithm choices, hyperparameter tuning experiments, metric evaluations, and analytical conclusions represent the verified work for the 23CSE301 Machine Learning Capstone.
